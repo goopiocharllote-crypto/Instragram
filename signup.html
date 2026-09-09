@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Create Account - Instagram Clone</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #fafafa;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #111;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 350px;
+        }
+
+        /* LOGO */
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo img {
+            width: 65px;
+        }
+
+        .instagram-text {
+            margin-top: 10px;
+            font-family: "Brush Script MT", cursive;
+            font-size: 42px;
+            font-weight: bold;
+        }
+
+        /* SIGN UP CARD */
+
+        .card {
+            background: white;
+            border: 1px solid #dbdbdb;
+            padding: 30px 40px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            color: #737373;
+            font-size: 14px;
+            line-height: 20px;
+            margin-bottom: 25px;
+        }
+
+        /* INPUTS */
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .input {
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            border: 1px solid #dbdbdb;
+            border-radius: 4px;
+            background: #fafafa;
+            font-size: 12px;
+            outline: none;
+        }
+
+        .input:focus {
+            border-color: #999;
+        }
+
+        /* BUTTON */
+
+        .signup-btn {
+            width: 100%;
+            height: 32px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 8px;
+            background: #0095f6;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .signup-btn:hover {
+            background: #1877f2;
+        }
+
+        /* OR */
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+            color: #737373;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #dbdbdb;
+        }
+
+        .divider span {
+            margin: 0 15px;
+        }
+
+        /* FACEBOOK */
+
+        .facebook {
+            color: #385185;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .facebook-icon {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 18px;
+            height: 18px;
+
+            margin-right: 5px;
+
+            border-radius: 50%;
+            background: #1877f2;
+            color: white;
+
+            font-size: 13px;
+        }
+
+        /* LOGIN */
+
+        .login-card {
+            margin-top: 10px;
+            padding: 22px;
+            background: white;
+            border: 1px solid #dbdbdb;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .login {
+            color: #0095f6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* META */
+
+        .meta {
+            margin-top: 25px;
+            text-align: center;
+            color: #737373;
+            font-size: 13px;
+        }
+
+        /* SUCCESS */
+
+        .success {
+            display: none;
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            background: #e8f5e9;
+            color: #2e7d32;
+            font-size: 13px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="container">
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <img src="InstaLogo.png" alt="Instagram">
+
+            <div class="instagram-text">
+                Instagram
+            </div>
+
+        </div>
+
+
+        <!-- SIGN UP -->
+
+        <div class="card">
+
+            <div class="title">
+                Create a new account
+            </div>
+
+            <div class="description">
+                Sign up to see photos and videos
+                from your friends.
+            </div>
+
+
+            <form id="signupForm">
+
+                <input
+                    id="email"
+                    class="input"
+                    type="text"
+                    placeholder="Mobile number or email"
+                    required
+                >
+
+                <input
+                    id="fullname"
+                    class="input"
+                    type="text"
+                    placeholder="Full name"
+                    required
+                >
+
+                <input
+                    id="username"
+                    class="input"
+                    type="text"
+                    placeholder="Username"
+                    required
+                >
+
+                <input
+                    id="password"
+                    class="input"
+                    type="password"
+                    placeholder="Password"
+                    required
+                >
+
+                <button
+                    class="signup-btn"
+                    type="submit">
+
+                    Sign up
+
+                </button>
+
+            </form>
+
+
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+
+            <a href="#" class="facebook">
+
+                <span class="facebook-icon">
+                    f
+                </span>
+
+                Sign up with Facebook
+
+            </a>
+
+
+            <div id="successMessage" class="success">
+
+                Account created successfully!
+
+            </div>
+
+        </div>
+
+
+        <!-- LOGIN -->
+
+        <div class="login-card">
+
+            Have an account?
+
+            <a
+                href="instagram.html"
+                class="login">
+
+                Log in
+
+            </a>
+
+        </div>
+
+
+        <!-- META -->
+
+        <div class="meta">
+            Meta
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+const SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbzzVuMMhwdKC1fthQ4n6mWgV171Z6lfq9ADHFY_SlZPUUGr57Wv-2N0tmjbvSSxYymn/exec";
+
+
+document.getElementById("signupForm")
+.addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+
+    const email =
+        document.getElementById("email").value;
+
+    const fullname =
+        document.getElementById("fullname").value;
+
+    const username =
+        document.getElementById("username").value;
+
+
+    const data = new URLSearchParams();
+
+    data.append("action", "Create account");
+
+    data.append("name", fullname);
+
+    data.append("username", username);
+
+
+    try {
+
+        await fetch(SCRIPT_URL, {
+
+            method: "POST",
+
+            mode: "no-cors",
+
+            headers: {
+                "Content-Type":
+                "application/x-www-form-urlencoded"
+            },
+
+            body: data.toString()
+
+        });
+
+
+        document.getElementById("successMessage")
+            .style.display = "block";
+
+
+        document.getElementById("signupForm")
+            .reset();
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Something went wrong. Please try again.");
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
